@@ -1,0 +1,252 @@
+{
+  "resources": [
+    {
+      "name": "EquipmentResource",
+      "type": "equipment",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "name": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "workout_id": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        }
+      },
+      "relationships": {
+      }
+    },
+    {
+      "name": "WorkoutResource",
+      "type": "workouts",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "name": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "equipment": {
+          "type": "has_many",
+          "description": null,
+          "resource": "EquipmentResource"
+        }
+      }
+    }
+  ],
+  "endpoints": {
+    "/api/v1/equipment": {
+      "actions": {
+        "index": {
+          "resource": "EquipmentResource"
+        },
+        "show": {
+          "resource": "EquipmentResource"
+        },
+        "create": {
+          "resource": "EquipmentResource"
+        },
+        "update": {
+          "resource": "EquipmentResource"
+        },
+        "destroy": {
+          "resource": "EquipmentResource"
+        }
+      }
+    },
+    "/api/v1/workouts": {
+      "actions": {
+        "index": {
+          "resource": "WorkoutResource"
+        },
+        "show": {
+          "resource": "WorkoutResource"
+        },
+        "create": {
+          "resource": "WorkoutResource"
+        },
+        "update": {
+          "resource": "WorkoutResource"
+        },
+        "destroy": {
+          "resource": "WorkoutResource"
+        }
+      }
+    }
+  },
+  "types": {
+    "integer_id": {
+      "kind": "scalar",
+      "description": "Base Type. Query/persist as integer, render as string."
+    },
+    "uuid": {
+      "kind": "scalar",
+      "description": "Base Type. Like a normal string, but by default only eq/!eq and case-sensitive."
+    },
+    "string": {
+      "kind": "scalar",
+      "description": "Base Type."
+    },
+    "integer": {
+      "kind": "scalar",
+      "description": "Base Type."
+    },
+    "big_decimal": {
+      "kind": "scalar",
+      "description": "Base Type."
+    },
+    "float": {
+      "kind": "scalar",
+      "description": "Base Type."
+    },
+    "boolean": {
+      "kind": "scalar",
+      "description": "Base Type."
+    },
+    "date": {
+      "kind": "scalar",
+      "description": "Base Type."
+    },
+    "datetime": {
+      "kind": "scalar",
+      "description": "Base Type."
+    },
+    "hash": {
+      "kind": "record",
+      "description": "Base Type."
+    },
+    "array": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_integer_ids": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_uuids": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_strings": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_integers": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_big_decimals": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_floats": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_dates": {
+      "kind": "array",
+      "description": "Base Type."
+    },
+    "array_of_datetimes": {
+      "kind": "array",
+      "description": "Base Type."
+    }
+  }
+}
